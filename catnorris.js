@@ -17,7 +17,8 @@ var UI = {
             this.multiplier = 1;
         }
         this.score += s*this.multiplier;
-        this.scoreLabel.string = this.score;
+        //this.scoreLabel.string = this.score;
+        //comment by hejia12 on 20160107
         this.lastTime = now;
         this.scoreLabel.stopAllActions();
         this.scoreLabel.setScale((this.multiplier-1)*0.5+1.5);
@@ -34,9 +35,9 @@ var UI = {
         var rand =  Math.random()*12454;
         var rank = 0|((hiscore - UI.score) * 34763  + rand);
         var percent = (UI.score *34763 + rand) / (hiscore*34763+rand);
-        var lb = cc.LabelTTF.create("地球太危险我要回喵星！\n恭喜喵战胜了"+ UI.pg +"个汪，\n超越了"+(0|(percent*100))+"％的好友！\n获得了"+UI.score+"分！", "黑体", 20, cc.size(225,105), cc.TEXT_ALIGNMENT_LEFT);
-        document.title = window.wxData.desc = "喵星刷屏！喵获得"+UI.score+"分，在众喵中排名"+(0|(percent*100))+"%，尼能超过喵吗！";
-        document.title = window.wxFriend.desc = "我拿了"+UI.score+"分，战胜了"+ UI.pg +"个汪，超越了"+(0|(percent*100))+"％的好友！你能超过我吗";
+        var lb = cc.LabelTTF.create("地球太危险我要回猿星！\n恭喜程序猿战胜了"+ UI.pg +"个产品汪，\n超越了"+(0|(percent*100))+"％的好友！\n 不过腾讯云说，要相爱不要相杀！", "黑体", 20, cc.size(225,105), cc.TEXT_ALIGNMENT_LEFT);
+        document.title = window.wxData.desc = "程序猿星刷屏！喵获得"+UI.score+"分，在众猿中排名"+(0|(percent*100))+"%，尼能超过喵吗！";
+        document.title = window.wxFriend.desc = "我拿了"+UI.score+"分，战胜了"+ UI.pg +"个产品汪，超越了"+(0|(percent*100))+"％的好友！你能超过我吗";
             lb.strokeStyle = cc.color(0,0,0);
         lb.lineWidth = 2;
         sp.addChild(lb);
@@ -82,7 +83,8 @@ var Manager = {
         }
         dogs = [];
         this.cat.idle();
-        UI.scoreLabel.setString(0);
+        //UI.scoreLabel.setString(0);
+        //hejia12 comment on 20160107
         UI.pgLabel.setString(0);
     },
     init:function(scene){
@@ -567,14 +569,14 @@ var MyScene = cc.Scene.extend({
 
         Manager.init(this);
 
-        this.scoreLabel =  UI.scoreLabel = new cc.LabelTTF("0", "黑体", 24, cc.size(150, 30), cc.TEXT_ALIGNMENT_LEFT);
+        this.scoreLabel =  UI.scoreLabel = new cc.LabelTTF("腾讯云", "黑体", 20, cc.size(150, 30), cc.TEXT_ALIGNMENT_LEFT);
         this.addChild(this.scoreLabel);
         this.scoreLabel.attr({
             x:30,
             y:cc.director.getVisibleSize().height - 25,
             strokeStyle: cc.color(0,0,0),
             lineWidth: 2,
-            color: cc.color(255,150,100),
+            color: cc.color(240,255,255),
             anchorX:0.1
         });
         var pg = new cc.Sprite("pg.png");
@@ -682,7 +684,7 @@ var ShareUI = cc.LayerColor.extend({
         arrow.y = cc.winSize.height - 5;
         this.addChild(arrow);
 
-        var label = new cc.LabelTTF("请点击右上角的菜单按钮\n然后\"分享到朋友圈\"\n测测好友的手指灵活度吧", "宋体", 18, cc.size(cc.winSize.width*0.7, 250), cc.TEXT_ALIGNMENT_CENTER);
+        var label = new cc.LabelTTF("请点击右上角的菜单按钮\n然后\"分享到朋友圈\"\n，邀请其他程序猿来帮你吧！", "宋体", 18, cc.size(cc.winSize.width*0.7, 250), cc.TEXT_ALIGNMENT_CENTER);
         label.x = cc.winSize.width/2;
         label.y = cc.winSize.height - 100;
         label.anchorY = 1;
