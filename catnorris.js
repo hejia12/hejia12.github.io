@@ -35,7 +35,7 @@ var UI = {
         var rand =  Math.random()*12454;
         var rank = 0|((hiscore - UI.score) * 34763  + rand);
         var percent = (UI.score *34763 + rand) / (hiscore*34763+rand);
-        var lb = cc.LabelTTF.create("地球太危险我要回猿星！\n恭喜程序猿战胜了"+ UI.pg +"个产品汪，\n超越了"+(0|(percent*100))+"％的好友！\n 不过腾讯云说，要相爱不要相杀！", "黑体", 20, cc.size(225,105), cc.TEXT_ALIGNMENT_LEFT);
+        var lb = cc.LabelTTF.create("腾讯云说，要相爱不要相杀！\n恭喜战胜了"+ UI.pg +"个产品汪，\n超越了"+(0|(percent*100))+"％的好友！\n ", "黑体", 20, cc.size(225,105), cc.TEXT_ALIGNMENT_LEFT);
         document.title = window.wxData.desc = "程序猿星刷屏！喵获得"+UI.score+"分，在众猿中排名"+(0|(percent*100))+"%，尼能超过喵吗！";
         document.title = window.wxFriend.desc = "我拿了"+UI.score+"分，战胜了"+ UI.pg +"个产品汪，超越了"+(0|(percent*100))+"％的好友！你能超过我吗";
             lb.strokeStyle = cc.color(0,0,0);
